@@ -13,6 +13,14 @@ public class AutoConversion {
 
         System.out.println(sum);//128
         System.out.println(sum2);//-128
+
+        System.out.println("========");
+        byte b1=1;
+        byte b2=2;
+        byte b3=1 + 2;
+        byte b4= (byte) (b1 + b2);
+        System.out.println(b3);//编译时期，已经把1+2计算成了3
+        System.out.println(b4);//因为JVM编译期不知b1变量和b2变量的值是否确定，所以会先转为int类型计算
     }
 
 }

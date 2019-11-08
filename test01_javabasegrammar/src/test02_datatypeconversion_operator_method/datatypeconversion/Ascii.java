@@ -6,7 +6,7 @@ package test02_datatypeconversion_operator_method.datatypeconversion;
  * A = 65;
  * a = 97;
  */
-public class Test03Demo {
+public class Ascii {
     public static void main(String[] args) {
         char o = '0';
         char A = 'A';
@@ -18,6 +18,9 @@ public class Test03Demo {
         System.out.println(o + 0);
         System.out.println(A + 0);
         System.out.println(a + 0);
+
+        char test = (char) 48;
+        System.out.println(test);
 
     }
 }

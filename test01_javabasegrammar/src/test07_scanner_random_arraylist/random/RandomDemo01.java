@@ -1,6 +1,5 @@
 package test07_scanner_random_arraylist.random;
 
-import org.junit.Test;
 
 import java.util.Random;
 import java.util.Scanner;

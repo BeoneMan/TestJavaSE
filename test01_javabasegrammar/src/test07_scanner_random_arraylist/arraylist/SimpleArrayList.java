@@ -20,15 +20,10 @@ public class SimpleArrayList<T> {
 
     public void add(int index, T element) {
         checkArrayIndexAddAndSet(index);
+
         //扩容
-        if (size == elements.length) {
-            T[] newElements = (T[]) new Object[elements.length + elements.length >> 1];
-            for (int i = 0; i < elements.length; i++) {
-                newElements[i] = elements[i];
-            }
-           this.elements = newElements;
-        }
-        System.out.println(elements.length+"新数组长度");
+        ensurecapacity();
+
         for (int i = size - 1; i >= index; i--) {
             elements[i + 1] = elements[i];
         }
@@ -74,13 +69,29 @@ public class SimpleArrayList<T> {
     public void checkArrayIndexAddAndSet(int index) {
         if (index < 0 || index > size) {
             throw new ArrayIndexOutOfBoundsException();
+            }
         }
+
+        //数组越界检查[remove get]
+        public void checkArrayIndexRemoveAndGet(int index) {
+            if (index < 0 || index >= size) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
     }
 
-    //数组越界检查[remove get]
-    public void checkArrayIndexRemoveAndGet(int index) {
-        if (index < 0 || index >= size) {
-            throw new ArrayIndexOutOfBoundsException();
+    //扩容
+    public void ensurecapacity(){
+        if(size<elements.length){
+            return;
         }
+        int newcapacity=elements.length+(elements.length>>1);
+        T[] newElement=(T[])new Object[newcapacity];
+
+        for(int i=0;i<elements.length;i++){
+            newElement[i]=elements[i];
+        }
+        elements=newElement;
     }
+
+
 }

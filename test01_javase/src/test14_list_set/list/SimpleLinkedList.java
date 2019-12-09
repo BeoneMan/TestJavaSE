@@ -1,6 +1,4 @@
-package test13_list_set.list;
-
-import java.util.Iterator;
+package test14_list_set.list;
 
 public class SimpleLinkedList<E> {
     int size;

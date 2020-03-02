@@ -1,4 +1,4 @@
-package test16_exception_thread.threadpool;
+package test18_threadpool_lambda.threadpool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

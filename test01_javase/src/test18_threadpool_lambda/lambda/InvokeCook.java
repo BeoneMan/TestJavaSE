@@ -1,4 +1,4 @@
-package test16_exception_thread.lambda;
+package test18_threadpool_lambda.lambda;
 
 /**
  * 无参数 无返回值

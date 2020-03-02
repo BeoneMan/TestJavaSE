@@ -1,7 +1,6 @@
-package test16_exception_thread.lambda;
+package test18_threadpool_lambda.lambda;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * 需求:

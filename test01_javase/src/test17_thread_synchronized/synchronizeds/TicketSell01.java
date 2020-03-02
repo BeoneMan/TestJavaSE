@@ -1,4 +1,4 @@
-package test16_exception_thread.thread.synchronizeds;
+package test17_thread_synchronized.synchronizeds;
 
 /**
  * 我们来模拟电影院的售票窗口，实现多个窗口同时卖 “葫芦娃大战奥特曼”这场电影票

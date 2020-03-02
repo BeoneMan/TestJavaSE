@@ -1,4 +1,4 @@
-package test16_exception_thread.thread.synchronizeds;
+package test17_thread_synchronized.synchronizeds;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

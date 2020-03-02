@@ -1,4 +1,4 @@
-package test16_exception_thread.thread.synchronizeds.example;
+package test17_thread_synchronized.synchronizeds.example;
 
 public class TestDemo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package test16_exception_thread.thread.synchronizeds;
+package test17_thread_synchronized.synchronizeds;
 
 /**
  * 使用同步方法解决同步问题

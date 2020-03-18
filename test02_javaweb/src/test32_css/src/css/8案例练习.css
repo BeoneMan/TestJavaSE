@@ -1,0 +1,115 @@
+.big{
+    background: url("../img/register_bg.png" ) no-repeat ;
+    width: 1360px;
+    height: 600px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.small{
+    background: white;
+    margin-left:245px ;
+    margin-top: 40px;
+    width: 870px;
+    height: 520px;
+    border: 8px solid #EEEEEE;
+}
+
+.left{
+    margin: 25px;
+    float: left;
+
+}
+.left div p{
+    margin: 0px;
+}
+.left_text1{
+    color: #FFDE65;
+    font-size: 18px;
+    font-weight: bold;
+}
+.left_text2{
+    color: #A6A6A6;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.middle{
+    float: left;
+    height: 520px;
+    width: 500px ;
+    box-sizing: border-box;
+    text-align: center;
+}
+.middle table{
+    margin-top: 45px;
+    margin-left: 100px;
+
+}
+#username,#password,#email,#name,#tel,#birthday{
+    border: 1px solid #A6A6A6 ;
+    /*设置边框圆角*/
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    padding-left: 20px;
+}
+#password{
+
+}
+#email{
+
+}
+#name{
+
+}
+#tel{
+
+}
+#birthday{
+
+}
+
+#checkcode{
+    /*设置边框圆角*/
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+
+
+}
+
+.td_left{
+    text-align: right;
+    height: 45px;
+    padding: 0px;
+    font-size: 14px;
+    color: #A6A6A6;
+}
+.td_right{
+    text-align: left;
+    padding-left: 40px ;
+}
+.td_right img{
+    width: 100px;
+    height: 30px;
+    vertical-align: middle;
+}
+.right{
+    float: right;
+    width: 130px;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+.right a:link{
+    color: red;
+}
+
+#btn_sub{
+    width: 120px;
+    height: 30px;
+    background-color: #FFD026;
+    border: 1px solid #FFD026 ;
+    margin-left: 10px;
+    margin-top: 20px;
+}

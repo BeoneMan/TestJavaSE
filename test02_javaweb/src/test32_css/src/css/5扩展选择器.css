@@ -1,0 +1,32 @@
+/*选择所有*/
+*{
+    font-weight: bold;
+}
+/*并集选择器*/
+/*div,a{
+    color: blue;
+}*/
+/*子选择器*/
+div p{
+    color: red;
+}
+/*父选择器*/
+div>p{
+    color: yellow;
+}
+/*属性选择器*/
+input[type="text"]{
+    border-color: red;
+}
+
+/*伪类选择器*/
+a:link{
+    color: darkgray;
+}
+a:hover{
+    color: black;
+}
+a:visited{
+    color: red;
+}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+    <form action="#" method="get">
+        用户名:<input id="username" type="text" name="username"><br>
+        密码: <input type="password" name="password"><br>
+        性别：男 <input type="radio" name="sex" value="male">女<input type="radio" name="sex" value="female"><br>
+        兴趣： 篮球 <input type="checkbox" name="play" value="lanqiu">
+            足球 <input type="checkbox" name="play" value="zuqiu">
+            排球 <input type="checkbox" name="play" value="paiqiu"><br>
+        文件:<input type="file" name="file"><br>
+        <label for="username">输入框跳到用户名</label><br>
+        <select name="hobby">
+            <option value="bianyi" >编译原理</option>
+            <option  selected value="caozuo">操作系统</option>
+            <option value="wangluo">网络编程</option>
+        </select>
+        <br>
+        <!-- cols指定每行多少字节
+             rows指定默认多少行
+          -->
+        文本区域：<textarea name="text" placeholder="请输入内容" cols="30" rows="8"></textarea><br>
+        <input type="submit" value="提交">
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var num = 1.2;
+        var newVar1 = typeof num;
+        document.write(newVar1); //结果为 number
+        document.write("<br>")
+
+
+        var str = "hello";
+        var newVar2 = typeof str;
+        document.write(newVar2); //结果为 string
+        document.write("<br>")
+
+/*
+
+        var str_num = hello;
+        var newVar3 = typeof str_num;
+        document.write(newVar3); //结果为 报错：hello is not defined
+        document.write("<br>")
+*/
+
+        var flag =true;
+        var newVar4 = typeof flag;
+        document.write(newVar4); //结果为 boolean
+        document.write("<br>")
+
+        var obj1=null;
+        var newVar5 = typeof obj1;
+        document.write(newVar5); //结果为 object
+        document.write("<br>")
+
+        var obj2=undefined;
+        var newVar6 = typeof obj2;
+        document.write(newVar6); //结果为 undefined
+        document.write("<br>")
+
+        var obj;
+        var newVar7 = typeof obj;
+        document.write(newVar7); //结果为 undefined
+        document.write("<br>")
+
+    </script>
+</head>
+<body>
+</body>
+</html>

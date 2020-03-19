@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Global</title>
+    <script>
+     /*
+        1. 特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  方法名();
+        2. 方法：
+			    encodeURI():url编码
+                decodeURI():url解码
+
+                encodeURIComponent():url编码,编码的字符更多
+                decodeURIComponent():url解码
+
+                 parseInt():将字符串转为数字
+                * 逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number
+                isNaN():判断一个值是否是NaN
+                * NaN六亲不认，连自己都不认。NaN参与的==比较全部问false
+
+                eval():讲 JavaScript 字符串，并把它作为脚本代码来执行。
+        3. URL编码
+        传智播客 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2*/
+        var s = encodeURI("邱佳源");
+        document.write(s);
+        document.write("<br>");
+        var s1 = decodeURI("%E9%82%B1%E4%BD%B3%E6%BA%90");
+        document.write(s1);
+        document.write("<br>");
+
+
+        var num ="123";
+        document.write(typeof num);
+        document.write("<br>");
+        var number = parseInt(num);
+        document.write(typeof number);
+        document.write("<hr>")
+
+
+        var n= NaN;
+        document.write(n==1);//false
+        document.write("<br>");
+        document.write(n==NaN);//false 连自己都不认
+        document.write("<br>");
+        document.write(isNaN(n));// true
+        document.write("<hr>")
+
+
+        eval("alert(123)");
+    </script>
+
+</head>
+<body>
+</body>
+</html>

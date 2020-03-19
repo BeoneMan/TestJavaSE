@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一元运算符</title>
+    <script>
+        var num =1;
+        var a =num++;
+        var b =++num;
+        document.write(num);    // 3
+        document.write("<br>");
+        document.write(a);      // 1
+        document.write("<br>");
+        document.write(b);      // 3
+        document.write("<br>");
+        document.write("<hr>");
+
+        //字面值不是数字，则转为NaN
+        var str_num =+ "124ab";
+        document.write(str_num); // NaN
+        document.write("<br>");
+        var str_num_newVar = typeof str_num;
+        document.write(str_num_newVar); // number
+        document.write("<br>");
+
+        //如果字面值是数字，则转为number
+        var str_num2=+"100";
+        document.write(str_num2); // 100
+        document.write("<br>");
+
+
+        var str_num2_newVar = typeof str_num2;
+        document.write(str_num2_newVar); // number
+        document.write("<br>");
+        document.write("<hr>");
+
+        //布尔转数字
+        var flag=+false;
+        document.write(flag); //false=0;true=1
+        document.write("<br>")
+        var flag_newVar = typeof flag;
+        document.write(flag_newVar)
+        document.write("<br>")
+
+    </script>
+</head>
+<body>
+</body>
+</html>

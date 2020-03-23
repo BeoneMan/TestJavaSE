@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>element对象</title>
+</head>
+<body>
+    <div id ="hw" style="color: red  ">Hello World</div>
+</body>
+<script>
+/*
+    1. 获取/创建：通过document来获取和创建
+    2. 方法：
+		 1. removeAttribute()：删除属性
+         2. setAttribute()：设置属性
+    */
+
+    var hw = document.getElementById("hw");
+    // hw.removeAttribute("style");
+    // hw.setAttribute("style","color:green");
+    hw.setAttribute("style","font-size:20px;color:green");
+</script>
+</html>

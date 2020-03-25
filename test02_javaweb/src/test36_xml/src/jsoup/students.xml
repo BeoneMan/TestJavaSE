@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-stylesheet type="text/css" href="../css/a.css" ?>-->
+
+<students>
+    <student id="1">
+        <name id="name1">
+            <xing>张</xing>
+            <ming>三</ming>
+        </name>
+        <age>18</age>
+        <gender>男</gender>
+    </student>
+
+    <student id="2">
+        <name id="name2">
+            <xing bie="">小</xing>
+            <ming>二</ming>
+        </name>
+        <age id="age2">27</age>
+        <gender>女</gender>
+    </student>
+    <![CDATA[
+        这是一段程序代码
+    ]]>
+
+    <xmlstudent>
+
+    </xmlstudent>
+</students>

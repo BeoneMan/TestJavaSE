@@ -1,0 +1,7 @@
+<!ELEMENT students (student*) >
+<!ELEMENT student (name , age , gender) >
+<!ELEMENT name (xing,ming) >
+<!ELEMENT xing (#PCDATA) >
+<!ELEMENT ming (#PCDATA) >
+<!ELEMENT age (#PCDATA) >
+<!ELEMENT gender (#PCDATA) >

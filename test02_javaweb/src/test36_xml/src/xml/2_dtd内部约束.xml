@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students[
+   <!ELEMENT students (student*) >
+   <!ELEMENT student (name , age , gender) >
+   <!ELEMENT name (xing,ming) >
+   <!ELEMENT xing (#PCDATA) >
+   <!ELEMENT ming (#PCDATA) >
+   <!ELEMENT age (#PCDATA) >
+   <!ELEMENT gender (#PCDATA) >
+]>
+
+<students>
+    <student>
+        <name>
+            <xing></xing>
+            <ming></ming>
+        </name>
+        <age></age>
+        <gender></gender>
+    </student>
+    <student>
+        <name>
+            <xing></xing>
+            <ming></ming>
+        </name>
+        <age></age>
+        <gender></gender>
+    </student>
+</students>

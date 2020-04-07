@@ -5,7 +5,7 @@
    window.onload=function () {
        var pathName=window.document.location.pathname;
        document.getElementById("img").onclick = function () {
-           this.src = "/test40_cookie_session/example/checkCodeServlet?time=" +<%= System.currentTimeMillis() %>;
+           this.src = "${pageContext.servletContext.contextPath}/example/checkCodeServlet?time=" +<%= System.currentTimeMillis() %>;
        }
 
    }
@@ -16,10 +16,10 @@
 <body>
 
         提示：${msg}
-        <form  action="/test40_cookie_session/example/loginServlet" method="post">
+        <form  action="${pageContext.servletContext.contextPath}/example/loginServlet" method="post">
             账号： <input type="text" name="username"><br>
             密码：<input type="password" name="password"><br>
-            验证码：<input type="text" name="checkCode"><img id="img" src="/test40_cookie_session/example/checkCodeServlet"><br>
+            验证码：<input type="text" name="checkCode"><img id="img" src="${pageContext.servletContext.contextPath}/example/checkCodeServlet"><br>
             <input type="submit" value="提交">
         </form>
 

@@ -11,9 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>修改用户</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
     <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        $(function () {
+
+             $("input[value='${user.gender}']").prop("checked","checked");
+             $("select option[value='${user.address}'] ").prop("selected","selected");
+
+
+        })
+    </script>
 
 </head>
 <body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单过滤选择器</title>
+    <script  src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+            //查找所有可用的input元素
+            // $(":enabled").val("可用");
+
+            //匹配所有不可用元素
+            // $(":disabled").val("不可用");
+
+            //查找所有选中的复选框元素
+            // $(":checked").attr("checked",false);
+
+
+            // 查找所有选中的选项元素
+            $(":selected").attr("selected",false);
+
+        });
+
+    </script>
+</head>
+<body>
+    <form>
+        <input name="email" disabled="disabled" />
+        <input name="id" />
+    </form>
+    <br>
+
+    <form>
+        <input type="checkbox" name="newsletter" checked="checked" value="Daily" />
+        <input type="checkbox" name="newsletter" value="Weekly" />
+        <input type="checkbox" name="newsletter" checked="checked" value="Monthly" />
+    </form>
+
+    <br>
+    <select>
+        <option value="1">Flowers</option>
+        <option value="2" selected="selected">Gardens</option>
+        <option value="3">Trees</option>
+    </select>
+</body>
+</html>

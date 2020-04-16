@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <script  src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+            //找到form下所有label的标签体染蓝色
+            $("form label ").css("color","blue");
+
+            //找到form子级的label标签
+            // $("form>label").css("color","blue");
+
+            //找到form标签下所有的label标签
+            // $("form>label").css("color","blue");
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label>Name:</label><input name="name" />
+        <fieldset>
+            <label>Newsletter:</label><input name="newsletter" />
+        </fieldset>
+        <label>Age:</label><input name="Age" />
+    </form>
+    <input name="none" />
+</body>
+</html>

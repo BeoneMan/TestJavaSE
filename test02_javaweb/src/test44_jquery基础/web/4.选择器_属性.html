@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <script  src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+            //查找所有含有 id 属性的 div 元素
+            // $("input[id]").val("找到了");
+
+            //查找所有 name 属性是 newmilk 的 input 元素
+            // $("input[name='newmilk']").val("找到了");
+
+            //查找所有 name 属性不是 newsletter 的 input 元素
+            // $("input[name!='newmilk']").val("找到了");
+
+            //查找所有 name 以 'new' 开始的 input 元素
+            // $("input[name^='new']").val("找到了");
+
+
+            //查找所有 name 以 'man' 结尾的 input 元素
+            // $("input[name$='man']").val("找到了");
+
+
+            // 查找所有 name  包含 '-' 的 input 元素
+             $("input[name*='-']").val("找到了");
+
+        });
+    </script>
+</head>
+<body>
+        <input id="man-news" name="man-news" />
+        <input name="milkman" />
+        <input id="letterman" name="new-letterman" />
+        <input name="newmilk" />
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作_CURD</title>
+    <script  src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+            //父子关系
+           $("#pId").append(" <p>append </p>");
+           $("#pId").prepend("<p>prepend</p>")
+            //兄弟关系
+            $("#pId").after("<p>after！！！</p>")
+            $("#pId").before("<p>before！！！</p>")
+        })
+
+        //清空所选择元素下的所有子元素（保留选择元素的属性标签）
+        function empty() {
+            $("#pId").empty();
+
+        }     //remove删除所选择元素下的所有子元素（包括本身）
+        function remove() {
+            $("#pId").remove();
+        }
+    </script>
+</head>
+<body>
+    <p id="pId" class="pClass">I would like to say: </p>
+    <button type="button" onclick="empty()" >empty清空所选择元素下的所有子元素（保留选择元素的属性标签）</button>
+    <button type="button" onclick="remove()" >remove删除所选择元素下的所有子元素（包括本身）</button>
+</body>
+</html>

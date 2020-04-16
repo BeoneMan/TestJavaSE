@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作_属性</title>
+    <script  src="js/jquery-2.1.0.min.js"></script>
+    <script>
+
+        function setSrc() {
+            $("a").attr("href","https://www.baidu.com");
+        }
+
+        function removeSrc() {
+            $("a").removeAttr("href");
+        }
+
+        function setClass() {
+            $("a").addClass("aClass");
+        }
+
+        function removeClass() {
+            $("a").removeClass();
+        }
+
+        function swapClass() {
+            $("a").toggleClass("aClass");
+        }
+
+        function tianjia() {
+            $("a").attr("class","aClass");
+        }
+
+         function jian() {
+            $("a").removeAttr("class");
+        }
+
+    </script>
+</head>
+<body>
+
+    <a > 这个一条链接 </a>
+    <button type="button" onclick="setSrc()">设置href路径</button>
+    <button type="button" onclick="removeSrc()">删除href路径</button>
+    <button type="button" onclick="tianjia()">arr加class属性</button>
+    <button type="button" onclick="jian()">arr减class属性</button>
+    <button type="button" onclick="setClass()">添加class属性</button>
+    <button type="button" onclick="removeClass()">删除class属性</button>
+    <button type="button" onclick="swapClass()">交换class属性</button>
+    <br>
+    <!--  对class属性的操作 -->
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <script  src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+           // $("#divId").css("color","red");
+           // $(".divClass").css("color","blue");
+           // $("div").css("color","black");
+            $("div,p,span").css("color","red");
+        });
+    </script>
+</head>
+<body>
+    <div id="divId">divId欢迎使用jquery</div>
+    <div class="divClass">divClass欢迎使用jquery</div>
+    <div>div欢迎使用jquery</div>
+
+    <div>------------------------</div>
+
+    <div>div</div>
+    <p class="myClass">p class="myClass"</p>
+    <span>span</span>
+    <p class="notMyClass">p class="notMyClass"</p>
+</body>
+</html>

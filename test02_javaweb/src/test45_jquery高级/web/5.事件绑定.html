@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery-migrate-1.0.0.js"></script>
+    <script>
+        $(function () {
+            // 对id为pId绑定点击事件
+            $("#but1").on("click",en);
+
+            //对id为but1绑定取消事件
+            // $("#but1").off();
+
+            $("#but3").toggle(en,chn);
+        })
+
+        function chn (){
+            $("#pId").text("你好")
+        }
+        function en (){
+            $("#pId").text("Hello")
+        }
+
+    </script>
+</head>
+<body>
+        <p id="pId">你好</p>
+        <button type="button" id="but1">【点击翻译成英文】</button>
+        <button type="button" id="but3">【点击切换事件】</button>
+
+</body>
+</html>

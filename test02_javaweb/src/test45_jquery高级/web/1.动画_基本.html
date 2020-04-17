@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本动画</title>
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+
+            <!--显示所有段落-->
+            // $(".p1").show();
+
+            <!-- 用缓慢的动画将隐藏的段落显示出来，历时200毫秒。 -->
+            // $(".p1").show(200);
+
+            // 用迅速的动画将隐藏的段落显示出来，历时200毫秒。并在之后执行反馈！
+
+            // $(".p1").show(200,function () {
+            //     $(this).append("Driveman");
+            // });
+
+
+            //------------------------------------------------------------
+            //隐藏所有段落
+            // $(".p2").hide();
+
+            //用600毫秒的时间将段落缓慢的隐藏
+            // $(".p2").hide(600);
+
+            //用200毫秒将段落迅速隐藏，之后弹出一个对话框。
+            // $(".p2").hide(200,function () {
+            //     confirm("俺会回来的！！！");
+            // });
+
+            //------------------------------------------------------------
+
+
+
+
+        })
+        //对表格切换显示/隐藏
+        function to(){
+            $("table td").toggle();
+        }
+
+    </script>
+</head>
+<body>
+
+    <p class="p1" style="display: none">Hello</p>
+    <p class="p2" >Hello I am back!!!</p>
+    <table>
+            <td>Hello Word</td>
+    </table>
+<button type="button" onclick="to()">切换</button>
+
+</body>
+</html>

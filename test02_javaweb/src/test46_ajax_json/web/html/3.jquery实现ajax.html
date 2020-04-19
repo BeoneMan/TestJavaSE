@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery实现ajaxl</title>
+    <script src="../js/jquery-2.1.0.min.js"></script>
+    <script>
+        var string =   "{\"name\":\"张三\",\"age\":19}";
+        alert(jsonStr);
+        function fun() {
+
+          $.get(
+              "../ajaxServlet01",
+              $.parseJSON(string),//把字符串转为json对象
+              function (data) {
+                alert(data);
+              },
+              "text"
+
+          )
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="发送异步请求" onclick="fun()"/>
+</body>
+</html>

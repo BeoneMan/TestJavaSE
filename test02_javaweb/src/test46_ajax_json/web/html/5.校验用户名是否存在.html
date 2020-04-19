@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校验用户名是否存在</title>
+    <script src="../js/jquery-2.1.0.min.js"></script>
+    <script>
+        $(function () {
+
+           $("#usernameId").on("focusout",function () {
+              var value= $("#usernameId").val();
+              var data ={"username":value};
+                $.post(
+                    "../checkUsernameServlet",
+                    data,
+                    function (data) {
+                            alert(value+data.message);
+                    },
+                    "json"
+                );
+           })
+        })
+    </script>
+</head>
+<body>
+
+    用户名:<input id="usernameId" type="text" name="username"  />
+</body>
+</html>

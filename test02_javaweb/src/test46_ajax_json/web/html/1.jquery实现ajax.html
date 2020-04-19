@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery实现ajaxl</title>
+    <script src="../js/jquery-2.1.0.min.js"></script>
+    <script>
+        function fun() {
+            $.ajax({
+                url:"../ajaxServlet01",
+                data:{"name":"张三","age":18},
+                type:"GET",
+                success:function (data) {
+                    alert("成功"+data);
+                },
+                error:function (data) {
+                    alert("错误"+data);
+                },
+                dataType:"text"
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="发送异步请求" onclick="fun()"/>
+</body>
+</html>

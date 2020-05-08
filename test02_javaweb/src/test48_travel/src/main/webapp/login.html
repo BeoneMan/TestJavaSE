@@ -22,7 +22,7 @@
 		$(function () {
 			$("#btn_login").click(function(){
 					$.post(
-							"loginUserServlet",
+							"user/login",
 							$("#loginForm").serialize(),
 							function(data){
 								if(data.flag){

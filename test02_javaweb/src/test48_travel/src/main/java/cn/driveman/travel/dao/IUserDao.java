@@ -7,4 +7,5 @@ public interface IUserDao {
     int save(User user);
     User findUserByCode(String code);
     int updateUserActive(Integer userId);
+    User findUserByUsernameAndPassword(String username,String password);
 }

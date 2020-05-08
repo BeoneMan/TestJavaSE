@@ -1,6 +1,6 @@
 package cn.driveman.travel.service;
 
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.entity.User;
 
 public interface IUserService {
     User findUserByName(String username);

@@ -2,7 +2,7 @@ package cn.driveman.travel.service.impl;
 
 import cn.driveman.travel.dao.IUserDao;
 import cn.driveman.travel.dao.impl.UserDaoImpl;
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.entity.User;
 import cn.driveman.travel.service.IUserService;
 
 public class UserServiceImpl implements IUserService {

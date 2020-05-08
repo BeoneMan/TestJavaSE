@@ -1,7 +1,5 @@
-import cn.driveman.travel.domain.Route;
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.entity.Route;
 import cn.driveman.travel.util.JDBCUtils;
-import org.apache.commons.beanutils.BeanUtils;
 import org.junit.Test;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

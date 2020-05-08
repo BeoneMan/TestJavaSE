@@ -1,7 +1,7 @@
 package cn.driveman.travel.dao.impl;
 
 import cn.driveman.travel.dao.IUserDao;
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.entity.User;
 import cn.driveman.travel.util.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

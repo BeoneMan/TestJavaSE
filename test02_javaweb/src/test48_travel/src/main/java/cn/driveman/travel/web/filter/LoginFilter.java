@@ -1,7 +1,7 @@
 package cn.driveman.travel.web.filter;
 
 
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.entity.User;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

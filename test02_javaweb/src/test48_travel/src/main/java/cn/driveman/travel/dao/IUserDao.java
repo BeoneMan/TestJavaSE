@@ -1,6 +1,6 @@
 package cn.driveman.travel.dao;
 
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.entity.User;
 
 public interface IUserDao {
     User findUserByName(String username);

@@ -1,7 +1,7 @@
 package cn.driveman.travel.web.servlet;
 
-import cn.driveman.travel.domain.ResultInfo;
-import cn.driveman.travel.domain.User;
+import cn.driveman.travel.vo.ResultInfo;
+import cn.driveman.travel.entity.User;
 import cn.driveman.travel.service.IUserService;
 import cn.driveman.travel.service.impl.UserServiceImpl;
 import cn.driveman.travel.util.MailUtils;
@@ -138,7 +138,7 @@ public class UserServlet extends BaseServlet {
     public void exit(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
         HttpSession session = request.getSession();
         session.removeAttribute("user");
-        response.sendRedirect("index.html");
+        response.sendRedirect("../index.html");
     }
     //激活
     public void active(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{

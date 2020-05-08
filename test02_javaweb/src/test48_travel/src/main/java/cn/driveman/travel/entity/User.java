@@ -1,4 +1,4 @@
-package cn.driveman.travel.domain;
+package cn.driveman.travel.entity;
 
 import java.io.Serializable;
 

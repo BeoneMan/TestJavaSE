@@ -19,6 +19,8 @@ public class RouteServlet extends BaseServlet {
     ObjectMapper objectMapper = new ObjectMapper();
     public void pageQuery(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cidStr = request.getParameter("cid");
+        String rname = request.getParameter("rname");
+
         Integer cid = 1;
         if(!StringUtils.isEmpty(cidStr)){
             cid =  Integer.parseInt(cidStr);
@@ -29,7 +31,11 @@ public class RouteServlet extends BaseServlet {
             currentPage =  Integer.parseInt(currentPageStr);
         }
 
-        PageBean<Route> pageBean = routeService.queryPage(cid, currentPage, 10);
+        if(!StringUtils.isEmpty(rname)){
+            rname="%"+rname+"%";
+        }
+
+        PageBean<Route> pageBean = routeService.queryPage(cid, currentPage, 10,rname);
         response.setContentType("application/json,charset=utf-8");
         objectMapper.writeValue(response.getOutputStream(),pageBean);
     }

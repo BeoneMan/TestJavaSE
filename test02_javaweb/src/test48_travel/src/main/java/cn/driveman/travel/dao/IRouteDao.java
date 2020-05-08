@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IRouteDao {
     List<Route> findRouteListByCid(Integer cid);
-    Integer findTotalCount(Integer cid);
-    List<Route> findRouteListByPage(Integer cid,Integer startIndex,Integer pageSize);
+    Integer findTotalCount(Integer cid,String rname);
+    List<Route> findRouteListByPage(Integer cid,Integer startIndex,Integer pageSize,String rname);
 }

@@ -3,9 +3,7 @@ package cn.driveman.travel.web.servlet;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -41,8 +39,8 @@ public class CheckCodeServlet extends HttpServlet {
 		//产生4个随机验证码，12Ey
 		String checkCode = getCheckCode();
 		//将验证码放入HttpSession中
-		request.getSession().setAttribute("CHECKCODE_SERVER",checkCode);
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("CHECKCODE_SERVER",checkCode);
 		//设置画笔颜色为黄色
 		g.setColor(Color.YELLOW);
 		//设置字体的小大

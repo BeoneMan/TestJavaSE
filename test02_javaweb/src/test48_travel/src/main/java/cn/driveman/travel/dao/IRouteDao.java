@@ -8,4 +8,5 @@ public interface IRouteDao {
     List<Route> findRouteListByCid(Integer cid);
     Integer findTotalCount(Integer cid,String rname);
     List<Route> findRouteListByPage(Integer cid,Integer startIndex,Integer pageSize,String rname);
+    Route findRouteById(Integer id);
 }

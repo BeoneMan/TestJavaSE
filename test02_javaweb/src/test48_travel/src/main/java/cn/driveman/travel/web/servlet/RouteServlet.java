@@ -36,8 +36,19 @@ public class RouteServlet extends BaseServlet {
         }
 
         PageBean<Route> pageBean = routeService.queryPage(cid, currentPage, 10,rname);
-        response.setContentType("application/json,charset=utf-8");
+        response.setContentType("application/json;charset=utf-8");
         objectMapper.writeValue(response.getOutputStream(),pageBean);
     }
+    public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String rid = request.getParameter("rid");
+        Route route = new Route();
+        if(!StringUtils.isEmpty(rid)){
+             route = routeService.findRouteById(Integer.parseInt(rid));
+        }
+        response.setContentType("application/json;charset=utf-8");
+
+        objectMapper.writeValue(response.getOutputStream(),route);
+    }
+
 
 }

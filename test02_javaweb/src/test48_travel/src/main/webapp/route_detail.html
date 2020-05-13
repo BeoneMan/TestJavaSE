@@ -23,6 +23,7 @@
                 $("#sname").html(route.seller.sname);
                 $("#consphone").html(route.seller.consphone);
                 $("#address").html(route.seller.address);
+                $("#favoriteCount").html("已收藏"+route.count+"次");
 
                 //图片展示
 
@@ -51,7 +52,52 @@
                 //图片展示和切换代码调用
                 goImg();
             });
+
         })
+
+
+        $(function () {
+            // 发送请求，判断用户是否收藏过该线路
+            var rid = getParameter("rid");
+            $.get("route/isFavorite", {rid: rid}, function (flag) {
+                if (flag) {
+                    // 用户已经收藏过
+                    //<a  class="btn already" disabled="disabled">
+                    //设置收藏按钮的样式
+                    $("#favorite").addClass("already");
+                    $("#favorite").prop("disabled", disabled);
+
+
+                } else {
+                    // 用户没有收藏
+                }
+            })
+        })
+
+
+        //点击收藏按钮触发的方法
+        function addFavorite(){
+            var rid = getParameter("rid");
+            //1. 判断用户是否登录
+            $.get("user/findUser",{},function (data) {
+                console.log(data);
+                console.log(data.flag);
+                if(data.flag){
+                    //用户登录了
+                    //添加功能
+                    $.get("route/addFavorite",{rid:rid},function () {
+
+                        //代码刷新页面
+                        location.reload();
+                    });
+
+                }else{
+                    //用户没有登录
+                    alert("您尚未登录，请登录");
+                    location.href="http://localhost:80/travel/login.html";
+                }
+            },"json")
+        }
     </script>
 </head>
 
@@ -87,10 +133,10 @@
                 <div class="pros_price">
                     <p class="price"><strong id="price"></strong><span>起</span></p>
                     <p class="collect">
-                        <a class="btn"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
+                        <a id="favorite" class="btn" onclick="addFavorite()"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
 
-                        <a  class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
-                        <span>已收藏100次</span>
+<!--                        <a  class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
+                        <span id="favoriteCount"></span>
                     </p>
                 </div>        
             </div>

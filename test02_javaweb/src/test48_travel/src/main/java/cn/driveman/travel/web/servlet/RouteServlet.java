@@ -1,9 +1,13 @@
 package cn.driveman.travel.web.servlet;
 
 import cn.driveman.travel.domain.PageBean;
+import cn.driveman.travel.entity.Favorite;
 import cn.driveman.travel.entity.Route;
+import cn.driveman.travel.service.IFavoriteService;
 import cn.driveman.travel.service.IRouteService;
+import cn.driveman.travel.service.impl.FavoriteServiceImpl;
 import cn.driveman.travel.service.impl.RouteServiceImpl;
+import cn.driveman.travel.vo.ResultInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.util.StringUtils;
 
@@ -44,11 +48,45 @@ public class RouteServlet extends BaseServlet {
         Route route = new Route();
         if(!StringUtils.isEmpty(rid)){
              route = routeService.findRouteById(Integer.parseInt(rid));
+             route.setCount(routeService.findCountByRid(Integer.parseInt(rid)));
         }
+
         response.setContentType("application/json;charset=utf-8");
 
         objectMapper.writeValue(response.getOutputStream(),route);
     }
-
-
+    //判断用户是否收藏
+    public void isFavorite(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException {
+        IFavoriteService favoriteService = new FavoriteServiceImpl();
+        ObjectMapper objectMapper = new ObjectMapper();
+        String uid = request.getParameter("uid");
+        String rid = request.getParameter("rid");
+        Favorite favorite = null;
+        if(!StringUtils.isEmpty(uid)&&!StringUtils.isEmpty(rid)){
+            favorite = favoriteService.findFavoriteByRidAndUid(Integer.parseInt(uid), Integer.parseInt(rid));
+        }
+        response.setContentType("application/json;charset:utf-8");
+        objectMapper.writeValue(response.getOutputStream(),favorite);
+    }
+    //判断用户是否收藏
+    public void addFavorite(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException {
+        IFavoriteService favoriteService = new FavoriteServiceImpl();
+        ObjectMapper objectMapper = new ObjectMapper();
+        String uid = request.getParameter("uid");
+        String rid = request.getParameter("rid");
+        Favorite favorite = null;
+        ResultInfo resultInfo = new ResultInfo();
+        Integer addInt = 0;
+        if(!StringUtils.isEmpty(uid)&&!StringUtils.isEmpty(rid)){
+             addInt = favoriteService.addFavoriteByRidAndUid(Integer.parseInt(uid), Integer.parseInt(rid));
+        }
+        if (addInt > 0) {
+            resultInfo.setFlag(true);
+        } else {
+            resultInfo.setFlag(false);
+            resultInfo.setErrorMsg("收藏失败");
+        }
+        response.setContentType("application/json;charset:utf-8");
+        objectMapper.writeValue(response.getOutputStream(),resultInfo);
+    }
 }

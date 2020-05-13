@@ -1,8 +1,10 @@
 package cn.driveman.travel.service.impl;
 
+import cn.driveman.travel.dao.IFavoriteDao;
 import cn.driveman.travel.dao.IRouteDao;
 import cn.driveman.travel.dao.IRouteImgDao;
 import cn.driveman.travel.dao.ISellerDao;
+import cn.driveman.travel.dao.impl.FavoriteDaoImpl;
 import cn.driveman.travel.dao.impl.RouteDaoImpl;
 import cn.driveman.travel.dao.impl.RouteImgImpl;
 import cn.driveman.travel.dao.impl.SellerDaoImpl;
@@ -19,6 +21,8 @@ public class RouteServiceImpl implements IRouteService {
     IRouteDao routeDao = new RouteDaoImpl();
     ISellerDao sellerDao =  new SellerDaoImpl();
     IRouteImgDao routeImgDao =  new RouteImgImpl();
+    IFavoriteDao favoriteDao = new FavoriteDaoImpl();
+
     @Override
     public PageBean<Route> queryPage(Integer cid, Integer currentPage, Integer pageSize,String rname) {
 
@@ -45,5 +49,10 @@ public class RouteServiceImpl implements IRouteService {
             route.setRouteImgList(routeImgListByRid);
         }
         return route;
+    }
+
+    @Override
+    public Integer findCountByRid(Integer rid) {
+        return favoriteDao.findCountByRid(rid);
     }
 }

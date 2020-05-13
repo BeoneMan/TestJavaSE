@@ -6,4 +6,5 @@ import cn.driveman.travel.entity.Route;
 public interface IRouteService {
     PageBean<Route> queryPage(Integer cid, Integer currentPage, Integer pageSize,String rname);
     Route findRouteById(Integer id);
+    Integer findCountByRid(Integer rid);
 }

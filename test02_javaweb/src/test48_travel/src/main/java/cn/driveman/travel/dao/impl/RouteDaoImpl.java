@@ -39,7 +39,7 @@ public class RouteDaoImpl implements IRouteDao {
     public List<Route> findRouteListByPage(Integer cid, Integer startIndex, Integer pageSize, String rname) {
         StringBuilder sb = new StringBuilder();
         List<Object> paramList = new ArrayList<>();
-        String sql = "select * from tab_route where cid =? ";
+        String sql = "select r.cid,r.rname,r.price,r.rimage,r.routeIntroduce,r.rid from tab_route r where r.cid =?";
         sb.append(sql);
         paramList.add(cid);
         if (!StringUtils.isEmpty(rname)) {

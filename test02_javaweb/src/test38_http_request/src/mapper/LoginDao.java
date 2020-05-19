@@ -1,4 +1,4 @@
-package dao;
+package mapper;
 
 import domain.U;
 import domain.User;

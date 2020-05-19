@@ -1,7 +1,6 @@
-package dao.impl;
+package mapper.impl;
 
-import dao.IUserDao;
-import entity.PageBean;
+import mapper.IUserDao;
 import entity.User;
 import utils.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

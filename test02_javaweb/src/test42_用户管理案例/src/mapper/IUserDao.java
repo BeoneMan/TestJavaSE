@@ -1,6 +1,5 @@
-package dao;
+package mapper;
 
-import entity.PageBean;
 import entity.User;
 
 import java.util.List;

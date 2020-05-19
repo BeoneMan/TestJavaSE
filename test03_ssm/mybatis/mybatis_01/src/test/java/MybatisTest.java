@@ -1,4 +1,5 @@
-import dao.IUserDao;
+import mapper.UserAnnotationMapper;
+import mapper.UserMapper;
 import entity.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -16,7 +17,8 @@ public class MybatisTest {
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         SqlSessionFactory sqlSessionFactory =new SqlSessionFactoryBuilder().build(in);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+//        UserAnnotationMapper userDao = sqlSession.getMapper(UserAnnotationMapper.class);
+        UserMapper userDao = sqlSession.getMapper(UserMapper.class);
         List<User> userList = userDao.findAll();
         System.out.println(userList);
 

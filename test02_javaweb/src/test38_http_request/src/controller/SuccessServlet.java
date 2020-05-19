@@ -1,6 +1,5 @@
 package controller;
 
-import dao.LoginDao;
 import domain.User;
 
 import javax.servlet.ServletException;

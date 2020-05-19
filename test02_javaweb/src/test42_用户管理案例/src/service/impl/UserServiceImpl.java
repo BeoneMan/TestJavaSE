@@ -1,7 +1,7 @@
 package service.impl;
 
-import dao.IUserDao;
-import dao.impl.UserDaoImpl;
+import mapper.IUserDao;
+import mapper.impl.UserDaoImpl;
 import entity.PageBean;
 import entity.User;
 import service.IUserService;

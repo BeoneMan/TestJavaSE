@@ -15,7 +15,7 @@
         </environment>
     </environments>
     <mappers>
-       <package name="dao"/>
+       <package name="mapper"/>
     </mappers>
 </configuration>
     

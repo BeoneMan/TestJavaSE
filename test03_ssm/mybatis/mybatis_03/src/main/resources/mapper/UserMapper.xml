@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UserMapper">
+    <sql  id="defaultSql">
+        SELECT * FROM `user`
+    </sql>
+    <select id="findAll" resultType="User">
+        <include refid="defaultSql"/>
+    </select>
+
+
+    <select id="findByUser" parameterType="User" resultType="User">
+        <include refid="defaultSql"/>
+        <where>
+            <if test="username!=null and username!=''">
+                and `username` = #{username}
+            </if>
+            <if test="address!=null">
+                and `address` = #{address}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="findByQueryVoIds" parameterType="QueryVo" resultType="User">
+        <include refid="defaultSql"/>
+        <where>
+        <foreach collection="ids" open="id in (" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+        </where>
+    </select>
+
+
+    <resultMap id="UserMap" type="UserDTO">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="birthday" property="birthday"/>
+        <result column="sex" property="sex"/>
+        <result column="address" property="address"/>
+    </resultMap>
+    <resultMap id="accountListMap" type="UserDTO" extends="UserMap">
+        <collection  property="accountList" ofType="Account" >
+            <id column="accountId" property="id"/>
+            <result column="uid" property="uid"/>
+            <result column="MONEY" property="money"/>
+        </collection>
+    </resultMap>
+    <resultMap id="RoleListMap" type="UserDTO" extends="UserMap">
+        <collection property="roleList" ofType="Role">
+            <id column="RID" property="id"/>
+            <result column="ROLE_NAME" property="roleName"/>
+            <result column="ROLE_DESC" property="roleDesc"/>
+        </collection>
+    </resultMap>
+    <select id="findUserAccount" resultMap="accountListMap">
+    SELECT
+        u.id,
+        u.username,
+        u.birthday,
+        u.sex,
+        u.address,
+        a.id AS accountId,
+        a.uid,
+        a.MONEY
+    FROM
+        `user` u
+    LEFT JOIN `account` a
+    ON u.id = a.uid;
+    </select>
+    <select id="findUserRole" resultMap="RoleListMap">
+    SELECT
+        u.id,
+        u.username,
+        u.birthday,
+        u.sex,
+        u.address,
+        r.id AS RID,
+        r.ROLE_NAME,
+        r.ROLE_DESC
+    FROM
+        `user` u
+    LEFT JOIN `user_role` ur ON u.id = ur.UID
+    LEFT JOIN `role` r ON ur.RID = r.ID
+    </select>
+</mapper>
